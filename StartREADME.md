@@ -5,4 +5,5 @@
 5) We have to made email-config and write there.
 6) The send email is promise base syntax. We can put try catch and async await
 7) We are installing node-cron for schedulling reminder. That we have to send reminder on this date
-8) 
+8) We are planning to check database after every certain amount of time ki humko un data mein se kis kisko reminder bhejna hai 
+9) 
