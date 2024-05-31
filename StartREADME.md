@@ -6,4 +6,9 @@
 6) The send email is promise base syntax. We can put try catch and async await
 7) We are installing node-cron for schedulling reminder. That we have to send reminder on this date
 8) We are planning to check database after every certain amount of time ki humko un data mein se kis kisko reminder bhejna hai 
-9) 
+9) we are expected to send data at 10.00AM
+Every 5 minutes 
+We will check are there any emails that are expected to be sent by now and is pending. This is what we are doing in utils.js
+10) jab bhi humko koi operation karna hai to Op isko bhoolna nhi . 
+11) Abhi hum khud notification bhej rhe hai ki itne bje email bhejna hai uss hissab se har 5 min mein scheduler check karega aur agar current time se kam hua kisi ka notification time to send kar denge.
+12) 
