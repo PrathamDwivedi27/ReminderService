@@ -31,6 +31,7 @@ const createNotification=async(data)=>{
     try {
         const repo=new TicketRepository();
         const response=await repo.create(data);
+        console.log(response);
         return response;
     } catch (error) {
         console.log(error);
@@ -47,9 +48,30 @@ const updateTicket=async (ticketId,data)=>{
     }
 } 
 
+const subscribeEvents=async (payload)=>{
+    let service=payload.service;
+    let data=payload.data;
+    switch(service){
+        case 'CREATE_TICKET':
+            await createNotification(data);
+            break;
+        
+        case 'SEND_BASIC_EMAIL':
+            await sendBasicEmail(data);
+            break;
+
+        default:
+            console.log("No valid service is recieved ");
+            break;
+    }
+
+}
+
 module.exports={
     sendBasicEmail,
     fetchPendingEmails,
     createNotification,
-    updateTicket
+    updateTicket,
+    subscribeEvents
+    
 }
